@@ -57,7 +57,13 @@ pub fn run() {
     }
 
     // TODO 6 - use the list_directory function to print the current directory
-    let path = Path::new("./");
-    // list_dir("./")
-    // list_dir("./") 
+    match list_dir("./") {
+        None => println!("Error"),
+        Some(vector) => {
+            for element in vector {
+                println!("{}", element);
+            }
+        }
+    }
+
 }
